@@ -35,6 +35,7 @@ class Main extends React.Component {
         if (!userId) {
           this.socket.emit('userJoined', null);
           this.socket.on('userJoined', (userId) => {
+            console.log("kuch bhi", userId);
             AsyncStorage.setItem(USER_ID, userId);
             this.setState({ userId });
           });
@@ -77,9 +78,10 @@ class Main extends React.Component {
 
   // Helper functions
   _storeMessages(messages) {
+    const a = messages.filter((message) => { return !!message; });
     this.setState((previousState) => {
       return {
-        messages: GiftedChat.append(previousState.messages, messages),
+        messages: GiftedChat.append(previousState.messages, a),
       };
     });
   }

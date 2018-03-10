@@ -1,0 +1,7 @@
+version: '2'
+services:
+  rethinkdb:
+    image: rethinkdb:latest
+    ports:
+      - 29015:29015
+      - 28015:28015
