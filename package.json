@@ -1,5 +1,5 @@
 {
-  "name": "react-native-socket-io-example",
+  "name": "react-native-socketio-rethinkdb",
   "version": "0.0.1",
   "private": true,
   "scripts": {
